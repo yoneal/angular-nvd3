@@ -1,5 +1,5 @@
 /**************************************************************************
-* AngularJS-nvD3, v1.0.0-rc.2; MIT License; 10/07/2015 10:55
+* AngularJS-nvD3, v1.0.0-rc.2; MIT License; 03/08/2015 11:38
 * http://krispo.github.io/angular-nvd3
 **************************************************************************/
 (function(){
@@ -146,7 +146,7 @@
                                 // Remove resize handler. Due to async execution should be placed here, not in the clearElement
                                 if (scope.chart.resizeHandler) scope.chart.resizeHandler.clear();
                                 // Update the chart when window resizes
-                                scope.chart.resizeHandler = nv.utils.windowResize(function() { scope.chart.update && scope.chart.update(); });
+                                scope.chart.resizeHandler = nv.utils.windowResize(function() { scope.chart && scope.chart.update && scope.chart.update(); });
                                 return scope.chart;
                             }, options.chart['callback']);
                         },
